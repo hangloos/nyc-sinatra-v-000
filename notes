@@ -1,0 +1,17 @@
+class Landmark
+belongs_to :figure
+has_many :landmarks
+
+
+class title:
+has_many :title_figures
+has_many :landmarks, through: title_figures
+
+class title_figures
+joining table
+
+
+Figure
+\\ <%=Title.all.each do |title|%>
+    <input type="checkbox" name="figure[title_ids][]" id="<%=title.name%>" value="<%=title.id%>">
+    <%end%>
